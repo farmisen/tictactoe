@@ -109,7 +109,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 	unsigned long size;
-	char *pFileContent = (char*)CCFileUtils::getFileData("hello.lua", "r", &size);
+	char *pFileContent = (char*)CCFileUtils::getFileData("tictactoe.lua", "r", &size);
 
 	if (pFileContent)
 	{
@@ -125,7 +125,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_MARMALADE)
-	string path = CCFileUtils::fullPathFromRelativePath("hello.lua");
+	string path = CCFileUtils::fullPathFromRelativePath("tictactoe.lua");
     pEngine->addSearchPath(path.substr(0, path.find_last_of("/")).c_str());
     pEngine->executeScriptFile(path.c_str());
 #endif 
